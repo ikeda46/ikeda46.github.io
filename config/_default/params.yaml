@@ -5,8 +5,12 @@
 
 # Appearance
 appearance:
+  theme_day: apogee
+  theme_night: apogee
+  font: custom_font
+  font_size: S
   mode: system
-  color: emerald
+#  color: emerald
 
 # SEO
 marketing:
@@ -14,8 +18,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'The highly-customizable Hugo Academic theme powered by Hugo Blox Builder. Easily create your personal academic website.'
-    twitter: 'GetResearchDev'
+    description: 'Personal page'
+    twitter: 'ikeda46'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -35,7 +39,7 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
-      text: "Your Name"
+      text: "Shiro Ikeda"
 
 # Site footer
 footer:
@@ -49,8 +53,9 @@ footer:
 
 # Localization
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
+  date_format: '2 Jan, 2006'
+  time_format: '15:04'
+  address_format: en-gb
 
 # Site features
 features:
