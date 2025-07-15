@@ -1,51 +1,104 @@
-# [Hugo Academic CV Theme](https://github.com/HugoBlox/theme-academic-cv)
+# m10c theme
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/)
+![Intro](https://github.com/vaga/hugo-theme-m10c/blob/master/images/cover.png)
 
-The Hugo **Academic CV Template** empowers you to easily create your job-winning online resumé, showcase your academic publications, and create online courses or knowledge bases to grow your audience.
+A Hugo minimalistic theme for bloggers
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/templates/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/GetResearchDev)
+Main features:
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, Hugo Blox Builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+- Fully responsive
+- Twitter Cards, Open Graph, Disqus and Google Analytics supported (see Hugo docs)
+- Customizable colors
+- Customizable picture and description
+- Customizable menu on sidebar
+- Customizable social media links on sidebar
+- Optimized for performance 100/100 on Lighthouse
+- All Feather and Simple Icons icons included
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+## Getting started
 
-[Check out the latest demo](https://academic-demo.netlify.app/) of what you'll get in less than 10 minutes, or [get inspired by our academics and research groups](https://hugoblox.com/creators/).
+### Installation
 
-The integrated [**Hugo Blox Builder**](https://hugoblox.com) and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+Create a new Hugo site:
+```bash
+$ hugo new site [path]
+```
 
-- 👉 [**Get Started**](https://hugoblox.com/templates/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox Builder community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithHugoBlox](https://twitter.com/search?q=%23MadeWithHugoBlox&src=typed_query)
-- ⬇️ **Automatically import your publications from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 💡 [Suggest an improvement](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+Clone this repository into `themes/` directory:
+```bash
+$ cd [path]
+$ git clone https://github.com/vaga/hugo-theme-m10c.git themes/hugo-theme-m10c
+```
 
-## We ask you, humbly, to support this open source movement
+Add this line  in the `config.toml` file:
+```toml
+theme = "hugo-theme-m10c"
+```
 
-Today we ask you to defend the open source independence of the Hugo Blox Builder and themes 🐧
+### Configuration
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+In your `config.toml` file, define the following variables in `params`:
 
-### [❤️ Click here to become a Sponsor, unlocking awesome perks such as _exclusive academic templates and blocks_](https://hugoblox.com/sponsor/)
+- `author`: Name of the author
+- `description`: Short description of the author
+- `avatar`: Path of file containing the author avatar image
+- `menu_item_separator`: Separator between each menu item. HTML allowed (default: " - ")
+- `favicon`: Absolute path of your favicon.ico file (default: "/favicon.ico")
 
-<!--
-<p align="center"><a href="https://hugoblox.com/templates/" target="_blank" rel="noopener"><img src="https://hugoblox.com/uploads/readmes/academic_logo_200px.png" alt="Hugo Academic Theme for Hugo Blox Builder"></a></p>
--->
+To add a menu item, add the following lines in `menu`:
 
-## Demo image credits
+```
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+```
 
-- [Unsplash](https://unsplash.com)
+[Read Hugo documentations](https://gohugo.io/content-management/menus/#readout) for more informations about menu
 
-## Latest news
+To add a social link, add the following lines in `params`:
 
-<!--START_SECTION:news-->
-* [6 Compelling Reasons I Switched from WordPress to Hugo](https:&#x2F;&#x2F;hugoblox.com&#x2F;vs&#x2F;wordpress&#x2F;)
-* [The 7 best landing page builders in 2024](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;7-best-landing-page-builders&#x2F;)
-* [Start a Blog and Make Money in 2024: Here&#39;s What You Need to Know](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;start-a-blog-and-make-money&#x2F;)
-* [Hugo vs Quarto: Which One is Better for 2024?](https:&#x2F;&#x2F;hugoblox.com&#x2F;vs&#x2F;quarto&#x2F;)
-* [Easily make an academic CV website to get more cites and grow your audience 🚀](https:&#x2F;&#x2F;hugoblox.com&#x2F;blog&#x2F;easily-make-academic-website&#x2F;)
-<!--END_SECTION:news-->
+```
+[[params.social]]
+  icon = "brand-github"
+  name = "My Github"
+  url = "https://github.com/vaga"
+```
+
+To change theme colors, add the following lines in `params`:
+
+```
+[params.style]
+  darkestColor = "#d35050"
+  darkColor = "#212121"
+  lightColor = "#f5e3e0"
+  lightestColor = "#f5f5f5"
+  primaryColor = "#ffffff"
+```
+
+If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
+
+### Icons
+
+This theme uses two libraries for icons:
+
+- [Feather](https://feathericons.com/) is used for application-related icons.
+- [Simple Icons](https://simpleicons.org) is used for brand icons.
+
+To differentiate brand icons from regular ones, the prefix `brand-` is added
+to all icons from the Simple Icons library. (e.g., brand-github, brand-x, brand-mastodon...)
+
+### Styling
+
+To override styles using scss, add a file called `_extra.scss` to `[path]/assets/css/`
+
+**Note:** Hugo releases come in two versions, `hugo` and `hugo_extended`. You need `hugo_extended` to automatically compile your scss.
+
+## License
+
+This theme is released under the [**MIT**](/LICENSE.md) License.
+
+## Acknowledgements
+
+- [Feather](https://feathericons.com/) - [MIT](https://github.com/feathericons/feather/blob/master/LICENSE)
+- [Simple Icons](https://simpleicons.org) - [CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)

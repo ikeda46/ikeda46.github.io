@@ -1,0 +1,8 @@
+{{ $icons := site.Data.m10c.icons }}
+{{ $iconName := .Get 0 }}
+{{ if index $icons $iconName }}
+  {{ $iconSvg := index $icons $iconName }}
+  {{ $iconSvg | safeHTML }}
+{{ else }}
+  <span class="icon-missing">{{ $iconName }}</span>
+{{ end }}

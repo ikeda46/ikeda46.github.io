@@ -1,0 +1,167 @@
+baseURL = "https://example.com"
+title = "Shiro Ikeda"
+
+############################
+## Common definition
+############################
+
+[pagination]
+  pagerSize = 8
+
+[params]
+  menu_item_separator = " - "
+  avatar = "images/avatar.jpg"
+  favicon = "images/favicon.ico"
+
+  # Shiro's theme
+  [params.style]
+    darkestColor = "#48708b"
+    darkColor = "#37485a"
+    lightColor = "#fffdbd"
+    lightestColor = "#fffddd"
+    primaryColor = "#a2c2b5"
+
+[markup]
+  [markup.goldmark]
+
+    [markup.goldmark.renderer]
+      unsafe = true
+
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
+############################
+## Language dependence
+############################
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[language]
+  [languages.en]
+    title = "Shiro Ikeda"
+    languageName = "English"
+    weight = 1
+
+   [languages.en.params]
+      author = "Shiro Ikeda"
+      job_title = "Professor"
+
+    [[languages.en.params.organizations]]
+      name = "ISM"
+      url = "https://www.ism.ac.jp/index_e.html"
+
+    [[languages.en.params.organizations]]
+      name = "SOKENDAI"
+      url = "https://www.soken.ac.jp/en/"
+
+    [[languages.en.params.organizations]]
+      name = "Kavli IPMU"
+      url = "https://ipmu.jp/"
+    
+    [[languages.en.params.organizations]]
+      name = "NAOJ"
+      url = "https://www.nao.ac.jp/en/"
+
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/"
+      weight = 1
+    [[languages.en.menu.main]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/tags/"
+      weight = 2
+    [[languages.en.menu.main]]
+      identifier = "home"
+      name = "Updates"
+      url = "/posts/"
+      weight = 3
+
+    [[languages.en.params.social]]
+      icon = "at-sign"
+      name = "E-mail"
+      url = "mailto:shiro@ism.ac.jp"
+    [[languages.en.params.social]]
+      icon = "ai-google-scholar"
+      name = "Google scholar"
+      url = "https://scholar.google.com/citations?user=8cqUEh4AAAAJ&hl=en"
+    [[languages.en.params.social]]
+      icon = "ai-researchgate-square"
+      name = "Researchgate"
+      url = "https://www.researchgate.net/profile/Shiro-Ikeda"
+    [[languages.en.params.social]]
+      icon = "ai-orcid"
+      name = "Orcid"
+      url = "https://orcid.org/0000-0002-2462-1448"
+    [[languages.en.params.social]]
+      icon = "ai-cv"
+      name = "Curriculum Vitae"
+      url = "/files/CV.pdf"
+
+  [languages.ja]
+    title = "池田 思朗"
+    languageName = "日本語"
+    weight = 2
+
+    [languages.ja.params]
+      author = "池田 思朗"
+      job_title = "教授"
+
+    [[languages.ja.params.organizations]]
+      name = "統数研"
+      url = "https://www.ism.ac.jp/"
+
+    [[languages.ja.params.organizations]]
+      name = "総研大"
+      url = "https://www.soken.ac.jp/"
+
+    [[languages.ja.params.organizations]]
+      name = "カブリ数物研究所"
+      url = "https://ipmu.jp/ja"
+    
+    [[languages.ja.params.organizations]]
+      name = "国立天文台"
+      url = "https://www.nao.ac.jp/"
+
+    [[languages.ja.menu.main]]
+      identifier = "about"
+      name = "概要"
+      url = "/ja/"
+      weight = 1
+    [[languages.ja.menu.main]]
+      identifier = "tags"
+      name = "タグ"
+      url = "/ja/tags/"
+      weight = 2
+    [[languages.ja.menu.main]]
+      identifier = "home"
+      name = "更新履歴"
+      url = "/ja/posts/"
+      weight = 3
+
+    [[languages.ja.params.social]]
+      icon = "at-sign"
+      name = "E-mail"
+      url = "mailto:shiro@ism.ac.jp"
+    [[languages.ja.params.social]]
+      icon = "ai-google-scholar"
+      name = "Google scholar"
+      url = "https://scholar.google.com/citations?user=8cqUEh4AAAAJ&hl=en"
+    [[languages.ja.params.social]]
+      icon = "ai-researchgate-square"
+      name = "Researchgate"
+      url = "https://www.researchgate.net/profile/Shiro-Ikeda"
+    [[languages.ja.params.social]]
+      icon = "ai-orcid"
+      name = "Orcid"
+      url = "https://orcid.org/0000-0002-2462-1448"
+    [[languages.ja.params.social]]
+      icon = "ai-cv"
+      name = "Curriculum Vitae"
+      url = "/files/CV_j.pdf"
