@@ -2,7 +2,7 @@
 date: 2024-04-01
 publishDate: 2024-04-01
 #external_link: "https://sites.google.com/view/sublime-tifuun/"
-tags: ["Project", "KAKEN", "Astronomy"]
+tags: ["Project"]
 title: SUBLIME-TIFUUN
 featured: featured.png
 math: true

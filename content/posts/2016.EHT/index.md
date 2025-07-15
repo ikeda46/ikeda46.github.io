@@ -1,7 +1,7 @@
 ---
 date: 2016-04-01
 publishDate: 2016-04-01
-tags: ["Project", "Astronomy"]
+tags: ["Project"]
 title: Event Horizon Telescope
 featured: featured.png
 math: true
