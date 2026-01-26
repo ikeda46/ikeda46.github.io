@@ -1,9 +1,8 @@
 ---
-title: "FDIG 2025"
+title: Further Developement of Information Geometry 2025
 date: 2025-03-20
 publishDate: 2025-03-01
 tags: ["Organizing International Meeting"]
-title: Further Developement of Information Geometry 2025
 featured: featured.png
 math: true
 ---
