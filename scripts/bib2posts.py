@@ -509,11 +509,6 @@ def make_post(entry, lang):
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    import argparse
-    parser = argparse.ArgumentParser(description='Convert BibTeX entries to Hugo Markdown posts.')
-    parser.add_argument('--force', action='store_true', help='Overwrite existing files')
-    args = parser.parse_args()
-
     print("Parsing BibTeX files…")
     entries, _ = parse_bib_files(BIBFILES)
     print(f"  Found {len(entries)} entries")
@@ -521,7 +516,7 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     all_tags = TAG_EN | TAG_EN_DOM
-    created = skipped = updated = 0
+    created = skipped = 0
     for entry in entries:
         key = entry['_key']
         etype = entry['_type']
@@ -534,29 +529,21 @@ def main():
         ja_path = OUTPUT_DIR / f"{key}.ja.md"
 
         if is_japanese:
-            if ja_path.exists() and not args.force:
-                print(f"  [skip exists] {key}")
+            if ja_path.exists():
                 skipped += 1
                 continue
-            existed = ja_path.exists()
             ja_path.write_text(make_post(entry, 'ja'), encoding='utf-8')
         else:
-            if (en_path.exists() or ja_path.exists()) and not args.force:
-                print(f"  [skip exists] {key}")
+            if en_path.exists() or ja_path.exists():
                 skipped += 1
                 continue
-            existed = en_path.exists() or ja_path.exists()
             en_path.write_text(make_post(entry, 'en'), encoding='utf-8')
             ja_path.write_text(make_post(entry, 'ja'), encoding='utf-8')
 
-        if existed:
-            print(f"  [updated] {key}")
-            updated += 1
-        else:
-            print(f"  [created] {key}")
-            created += 1
+        print(f"  [created] {key}")
+        created += 1
 
-    print(f"\nDone: {created} entries created, {updated} updated, {skipped} skipped (already exist).")
+    print(f"\nDone: {created} entries created, {skipped} skipped (already exist).")
 
 if __name__ == '__main__':
     main()
